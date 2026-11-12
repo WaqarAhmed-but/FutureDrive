@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #08080d;
+  --panel: #101019;
+  --panel-2: #151421;
+  --purple: #9b5cff;
+  --purple-light: #c39aff;
+  --text: #f7f5fb;
+  --muted: #a6a2b2;
+  --line: rgba(255,255,255,.11);
+  --max: 1240px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { background: var(--bg); color: var(--text); font-family: Inter, sans-serif; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+::selection { background: var(--purple); color: white; }
+.page-glow { position: fixed; width: 420px; height: 420px; border-radius: 50%; filter: blur(130px); opacity: .10; pointer-events: none; z-index: -1; }
+.page-glow-one { background: #8c35ff; top: 20%; left: -300px; }
+.page-glow-two { background: #4d1ba0; right: -300px; top: 65%; }
+.site-header { height: 82px; position: fixed; inset: 0 0 auto; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 max(6%, calc((100% - var(--max))/2)); background: rgba(8,8,13,.78); border-bottom: 1px solid rgba(255,255,255,.07); backdrop-filter: blur(18px); }
+.brand { font: 800 21px Orbitron, sans-serif; letter-spacing: 1.5px; white-space: nowrap; }
+.brand span { color: var(--purple); }
+.brand i { color: var(--purple-light); font-style: normal; }
+.main-nav { display: flex; align-items: center; gap: 34px; }
+.nav-link { color: #b9b5c4; font-size: 12px; letter-spacing: .7px; transition: color .25s; }
+.nav-link:hover, .nav-link.active { color: white; }
+.nav-contact { color: white; border: 1px solid rgba(195,154,255,.55); padding: 11px 16px; }
+.nav-contact span { color: var(--purple-light); margin-left: 9px; }
+.menu-toggle { display: none; background: none; border: 0; }
+.menu-toggle span { display: block; width: 25px; height: 2px; margin: 6px; background: white; }
+
+.hero { min-height: 790px; height: 100svh; max-height: 1000px; position: relative; display: flex; align-items: center; overflow: hidden; padding: 130px max(10%, calc((100% - var(--max))/2)); }
+.hero-image { position: absolute; inset: 0; background: url('assets/hero-car.jpg') center 54% / cover no-repeat; transform: scale(1.035); animation: heroZoom 16s ease-in-out infinite alternate; }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,7,12,.98) 0%, rgba(7,7,12,.91) 27%, rgba(7,7,12,.55) 53%, rgba(7,7,12,.08) 100%), linear-gradient(0deg, var(--bg) 0%, transparent 22%, transparent 78%, rgba(7,7,12,.25) 100%); }
+.hero-content { position: relative; z-index: 2; max-width: 590px; padding-top: 25px; }
+.eyebrow, .section-kicker { color: var(--purple-light); font-size: 10px; font-weight: 700; letter-spacing: 3px; }
+.eyebrow { display: flex; align-items: center; gap: 13px; margin-bottom: 26px; }
+.eyebrow-line { width: 34px; height: 1px; background: var(--purple); box-shadow: 0 0 12px var(--purple); }
+.hero h1 { font: 800 clamp(56px, 7.3vw, 100px)/.99 Orbitron, sans-serif; letter-spacing: -4px; }
+.hero h1 span, .section-title span, .manifesto h2 span { color: var(--purple); text-shadow: 0 0 32px rgba(155,92,255,.34); }
+.hero-copy { max-width: 445px; color: #c0bdca; font-size: 14px; line-height: 1.9; margin: 28px 0 31px; }
+.hero-actions { display: flex; align-items: center; gap: 27px; flex-wrap: wrap; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 25px; min-height: 51px; padding: 0 23px; border: 1px solid var(--purple); color: white; text-transform: uppercase; font-size: 10px; font-weight: 800; letter-spacing: 1.4px; transition: .3s; }
+.button-primary { background: linear-gradient(110deg, #7135d9, #a65cff); box-shadow: 0 0 25px rgba(155,92,255,.22); }
+.button:hover { transform: translateY(-4px); box-shadow: 0 0 34px rgba(155,92,255,.45); }
+.button span { font-size: 16px; }
+.text-link { color: #d1ccda; font-size: 11px; }
+.text-link span { color: var(--purple-light); margin-left: 8px; }
+.hero-side-note { position: absolute; right: 5%; top: 47%; display: flex; align-items: center; gap: 12px; color: #b6afc2; font-size: 9px; letter-spacing: 2px; writing-mode: vertical-rl; }
+.hero-side-note span { color: var(--purple-light); }
+.hero-side-note i { width: 1px; height: 55px; background: var(--purple); }
+.scroll-cue { position: absolute; left: max(6%, calc((100% - var(--max))/2)); bottom: 38px; color: #aaa5b5; font-size: 8px; letter-spacing: 2px; display: flex; align-items: center; gap: 12px; }
+.scroll-cue span { display: block; width: 38px; height: 1px; background: var(--purple); }
+.hero-index { position: absolute; right: max(6%, calc((100% - var(--max))/2)); bottom: 35px; font: 12px Orbitron; color: var(--purple-light); }
+.hero-index span { color: #777181; }
+
+.section-wrap { width: min(var(--max), 84%); margin-inline: auto; }
+.intro { padding-top: 130px; padding-bottom: 110px; }
+.section-kicker { margin-bottom: 37px; }
+.intro-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 10%; align-items: start; }
+.section-title { font: 700 clamp(34px, 5vw, 59px)/1.18 Orbitron, sans-serif; letter-spacing: -1.8px; }
+.intro-copy { max-width: 460px; padding-top: 5px; }
+.large-copy { color: white !important; font-size: 21px !important; line-height: 1.5 !important; margin-bottom: 17px; }
+.intro-copy p:not(.large-copy), .contact-copy > p { color: var(--muted); font-size: 13px; line-height: 1.9; }
+.underlined-link { display: inline-block; margin-top: 25px; padding-bottom: 10px; border-bottom: 1px solid var(--purple); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.underlined-link span { color: var(--purple-light); margin-left: 14px; }
+.feature-strip { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 90px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.feature-strip > div { position: relative; padding: 27px 25px 27px 0; display: grid; grid-template-columns: 35px 1fr; gap: 6px 10px; }
+.feature-strip > div + div { border-left: 1px solid var(--line); padding-left: 25px; }
+.feature-number { color: var(--purple-light); font: 12px Orbitron; grid-row: span 2; }
+.feature-strip strong { font-size: 10px; letter-spacing: 1.5px; }
+.feature-strip small { color: var(--muted); font-size: 11px; }
+
+.vehicles { padding-top: 100px; padding-bottom: 125px; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 42px; }
+.section-subtitle { color: var(--muted); font-size: 13px; margin-top: 13px; }
+.slider-controls { display: flex; gap: 9px; }
+.slider-arrow, .circle-link { width: 43px; height: 43px; border: 1px solid rgba(195,154,255,.45); color: white; background: transparent; border-radius: 50%; transition: .25s; }
+.slider-arrow:hover, .circle-link:hover { background: var(--purple); border-color: var(--purple); box-shadow: 0 0 20px rgba(155,92,255,.35); }
+.vehicle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.vehicle-card { min-width: 0; background: linear-gradient(145deg, #151421, #0c0c13); border: 1px solid rgba(255,255,255,.08); transition: transform .35s, border-color .35s; }
+.vehicle-card:hover { transform: translateY(-7px); border-color: rgba(155,92,255,.55); }
+.vehicle-image { height: 230px; position: relative; overflow: hidden; background-image: linear-gradient(0deg, rgba(8,8,13,.6), transparent 55%), url('assets/hero-car.jpg'); background-size: cover; background-position: center; }
+.vehicle-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(117,52,211,.12), transparent 55%); mix-blend-mode: screen; }
+.vehicle-image-two { background-position: 65% 53%; filter: saturate(.65) hue-rotate(18deg); }
+.vehicle-image-three { background-position: 38% 58%; filter: saturate(.75) hue-rotate(-15deg) brightness(1.08); }
+.vehicle-tag { position: absolute; top: 17px; left: 18px; z-index: 1; color: white; font-size: 8px; letter-spacing: 1.7px; }
+.vehicle-number { position: absolute; right: 18px; bottom: 8px; color: rgba(255,255,255,.22); font: 46px Orbitron; }
+.vehicle-info { padding: 22px 20px 17px; display: flex; justify-content: space-between; align-items: center; }
+.vehicle-type { color: var(--purple-light); font-size: 8px; letter-spacing: 1.4px; margin-bottom: 8px; }
+.vehicle-info h3 { font: 600 21px Orbitron; letter-spacing: 1px; }
+.vehicle-info h3 span { color: var(--purple); }
+.circle-link { width: 36px; height: 36px; font-size: 17px; flex-shrink: 0; }
+.vehicle-specs { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); padding: 16px 20px 19px; }
+.vehicle-specs span { display: flex; flex-direction: column; gap: 6px; }
+.vehicle-specs b { font: 600 13px Orbitron; }
+.vehicle-specs small { color: #858091; font-size: 7px; letter-spacing: .8px; }
+.disclaimer { color: #777181; font-size: 9px; margin-top: 18px; }
+
+.performance { position: relative; overflow: hidden; padding: 115px 0 120px; background: #101019; }
+.performance-backdrop { position: absolute; inset: 0; opacity: .3; background: radial-gradient(ellipse at 80% 50%, rgba(126,61,211,.35), transparent 50%), repeating-linear-gradient(115deg, transparent 0 80px, rgba(255,255,255,.018) 81px 82px); }
+.performance-inner { position: relative; }
+.performance-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; }
+.performance-heading p { max-width: 300px; color: var(--muted); font-size: 13px; line-height: 1.8; padding-bottom: 7px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 75px; border-top: 1px solid var(--line); }
+.stat { padding: 30px 12px 0 0; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px; }
+.stat strong { font: 600 clamp(31px, 4vw, 49px) Orbitron; }
+.stat > span { color: var(--purple-light); font: 12px Orbitron; }
+.stat small { flex-basis: 100%; color: var(--muted); font-size: 8px; letter-spacing: 1.2px; margin-top: 9px; }
+
+.manifesto { padding-top: 130px; padding-bottom: 130px; text-align: center; }
+.manifesto-line { width: 1px; height: 55px; margin: 0 auto 25px; background: var(--purple); }
+.manifesto-label { color: var(--purple-light); font-size: 9px; letter-spacing: 2.5px; margin-bottom: 25px; }
+.manifesto h2 { font: 700 clamp(40px, 7vw, 78px)/1.15 Orbitron; letter-spacing: -2px; margin-bottom: 35px; }
+.contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 12%; padding-top: 90px; padding-bottom: 110px; border-top: 1px solid var(--line); }
+.contact-copy .section-kicker { margin-bottom: 25px; }
+.contact-copy > p { max-width: 330px; margin-top: 20px; }
+.contact-form { display: grid; gap: 10px; }
+.contact-form label { color: #d7d2e0; font-size: 10px; letter-spacing: .6px; margin-top: 8px; }
+.contact-form input, .contact-form textarea { width: 100%; border: 1px solid rgba(255,255,255,.13); outline: none; background: #111019; color: white; padding: 14px 15px; font-size: 12px; resize: vertical; transition: border-color .2s, box-shadow .2s; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(155,92,255,.1); }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: #777181; }
+.form-submit { justify-self: start; margin-top: 12px; }
+.form-note { color: #777181; font-size: 9px; line-height: 1.6; }
+.site-footer { min-height: 115px; padding: 28px 8%; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 15px; border-top: 1px solid var(--line); background: #060609; }
+.site-footer .brand { font-size: 16px; }
+.site-footer p, .back-top { color: #8d8799; font-size: 8px; letter-spacing: 1.3px; text-align: center; }
+.back-top { text-align: right; }
+.site-footer small { grid-column: 1 / -1; color: #5f5a69; font-size: 8px; letter-spacing: 1px; }
+
+.vehicle-dialog { width: min(480px, calc(100% - 32px)); margin: auto; padding: 42px; background: #12111b; color: white; border: 1px solid rgba(195,154,255,.45); box-shadow: 0 20px 90px rgba(0,0,0,.7); }
+.vehicle-dialog::backdrop { background: rgba(0,0,0,.78); backdrop-filter: blur(6px); }
+.dialog-close { position: absolute; top: 10px; right: 15px; border: 0; background: transparent; color: white; font-size: 28px; }
+.vehicle-dialog .section-kicker { margin-bottom: 20px; }
+.vehicle-dialog h2 { font: 700 30px Orbitron; margin-bottom: 16px; }
+.vehicle-dialog > p:not(.section-kicker) { color: var(--muted); font-size: 13px; line-height: 1.8; }
+.vehicle-dialog .dialog-disclaimer { font-size: 10px !important; margin-top: 20px; color: var(--purple-light) !important; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@keyframes heroZoom { from { transform: scale(1.035); } to { transform: scale(1.09); } }
+
+@media (max-width: 900px) {
+  .site-header { padding-inline: 5%; }
+  .main-nav { gap: 18px; }
+  .hero { padding-inline: 8%; }
+  .hero-shade { background: linear-gradient(90deg, rgba(7,7,12,.97), rgba(7,7,12,.78) 52%, rgba(7,7,12,.25)), linear-gradient(0deg, var(--bg), transparent 25%); }
+  .section-wrap { width: 88%; }
+  .vehicle-grid { gap: 12px; }
+  .vehicle-image { height: 185px; }
+  .vehicle-info { padding-inline: 14px; }
+  .vehicle-specs { padding-inline: 14px; }
+}
+@media (max-width: 650px) {
+  .site-header { height: 72px; }
+  .brand { font-size: 18px; }
+  .menu-toggle { display: block; z-index: 102; }
+  .main-nav { display: none; position: absolute; top: 71px; left: 0; right: 0; padding: 22px 6% 28px; background: rgba(8,8,13,.97); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 22px; }
+  .main-nav.open { display: flex; }
+  .nav-contact { padding: 9px 13px; }
+  .hero { min-height: 760px; height: 100svh; padding: 130px 7% 90px; align-items: center; }
+  .hero-image { background-position: 58% center; }
+  .hero-shade { background: linear-gradient(90deg, rgba(7,7,12,.96), rgba(7,7,12,.73) 70%, rgba(7,7,12,.35)), linear-gradient(0deg, var(--bg), transparent 35%); }
+  .hero h1 { font-size: clamp(48px, 13vw, 72px); letter-spacing: -3px; }
+  .hero-copy { max-width: 360px; font-size: 12px; }
+  .hero-side-note { display: none; }
+  .scroll-cue { left: 7%; bottom: 28px; }
+  .hero-index { right: 7%; bottom: 25px; }
+  .section-wrap { width: 86%; }
+  .intro, .vehicles { padding-top: 85px; padding-bottom: 85px; }
+  .intro-grid, .contact { grid-template-columns: 1fr; gap: 35px; }
+  .section-title { font-size: clamp(33px, 9vw, 48px); }
+  .feature-strip { grid-template-columns: 1fr; margin-top: 55px; }
+  .feature-strip > div, .feature-strip > div + div { border-left: 0; border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .feature-strip > div:last-child { border-bottom: 0; }
+  .section-heading { align-items: end; gap: 15px; }
+  .slider-controls { display: none; }
+  .vehicle-grid { grid-template-columns: 1fr; }
+  .vehicle-image { height: 235px; }
+  .vehicle-card:nth-child(n+2) { display: none; }
+  .vehicle-grid.show-all .vehicle-card { display: block; }
+  .performance { padding: 85px 0; }
+  .performance-heading { display: block; }
+  .performance-heading p { margin-top: 20px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); row-gap: 32px; margin-top: 48px; }
+  .stat { padding-top: 22px; }
+  .manifesto { padding-top: 90px; padding-bottom: 90px; }
+  .contact { padding-top: 75px; padding-bottom: 80px; }
+  .site-footer { grid-template-columns: 1fr 1fr; padding: 25px 7%; }
+  .site-footer p { display: none; }
+  .back-top { grid-column: 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+
+/* =========================================================
+   FUTUREDRIVE — MULTI-CAR COLLECTION + CSS 3D SHOWROOM
+   Runs directly from file:// — no server, WebGL or libraries.
+   ========================================================= */
+.main-nav { gap: 25px; }
+.showroom-section { padding-top: 105px; padding-bottom: 115px; }
+.showroom-heading { display:flex; align-items:end; justify-content:space-between; gap:25px; margin-bottom:32px; }
+.showroom-live { color:#bcb4ce; font-size:8px; letter-spacing:1.6px; display:flex; align-items:center; gap:9px; white-space:nowrap; }
+.showroom-live span { width:7px;height:7px;border-radius:50%;background:#a45cff;box-shadow:0 0 13px #a45cff; }
+.immersive-showroom {
+  --show-glow:#a45cff; --show-glow-soft:rgba(164,92,255,.27);
+  border:1px solid rgba(195,154,255,.25);
+  background:#08080e;
+  box-shadow:0 28px 90px rgba(0,0,0,.4), inset 0 0 65px rgba(155,92,255,.06);
+  overflow:hidden;
+}
+.immersive-showroom.light-ice { --show-glow:#58dfff; --show-glow-soft:rgba(88,223,255,.25); }
+.immersive-showroom.light-ember { --show-glow:#ff6b65; --show-glow-soft:rgba(255,107,101,.24); }
+.showroom-topline { display:flex; justify-content:space-between; padding:17px 22px; border-bottom:1px solid rgba(255,255,255,.08); color:#9b93aa; font-size:8px; letter-spacing:2px; }
+.showroom-topline span:last-child { color:var(--show-glow); }
+.showroom-stage {
+  height:clamp(360px, 45vw, 550px); position:relative; overflow:hidden; isolation:isolate;
+  perspective:1200px;
+  background:radial-gradient(ellipse at 52% 60%,var(--show-glow-soft),transparent 48%),linear-gradient(180deg,#0c0b13,#090910 70%,#07070c);
+  touch-action:pan-y;
+}
+.showroom-ambient { position:absolute; inset:0; background:radial-gradient(ellipse at 50% 10%,var(--show-glow-soft),transparent 50%); opacity:.9; }
+.showroom-grid {
+  position:absolute; left:-20%; right:-20%; bottom:-42%; height:75%;
+  transform:rotateX(67deg); transform-origin:top center;
+  background-image:linear-gradient(rgba(174,132,255,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(174,132,255,.18) 1px,transparent 1px);
+  background-size:62px 42px;
+  mask-image:linear-gradient(to bottom,black,transparent 88%);
+  animation:showGridMove 8s linear infinite;
+}
+@keyframes showGridMove { to { background-position:0 42px,62px 0; } }
+.showroom-ring {
+  position:absolute; left:50%; top:64%; width:min(780px,82%); height:190px; border:1px solid var(--show-glow);
+  border-radius:50%; transform:translate(-50%,-50%) rotateX(70deg) rotateZ(-7deg);
+  box-shadow:0 0 22px var(--show-glow-soft),inset 0 0 22px var(--show-glow-soft); opacity:.42;
+}
+.showroom-platform {
+  position:absolute; z-index:1; left:50%; top:72%; width:min(760px,78%); height:80px;
+  transform:translate(-50%,-50%) rotateX(63deg);
+  transform-style:preserve-3d;
+}
+.platform-top {
+  position:absolute; inset:0; border:2px solid var(--show-glow); border-radius:50%;
+  background:radial-gradient(ellipse,rgba(255,255,255,.12),rgba(120,75,190,.13) 45%,rgba(5,5,10,.9) 72%);
+  box-shadow:0 0 18px var(--show-glow),0 0 45px var(--show-glow-soft),inset 0 0 28px var(--show-glow-soft);
+}
+.platform-edge {
+  position:absolute; left:0; right:0; top:24px; height:35px; border-bottom:5px solid var(--show-glow);
+  border-radius:0 0 50% 50%; filter:drop-shadow(0 0 12px var(--show-glow));
+}
+.platform-glow { position:absolute; inset:12px 12%; border-radius:50%; box-shadow:0 18px 38px var(--show-glow-soft); }
+.showroom-car-wrap {
+  --car-tilt-x:0deg; --car-tilt-y:-9deg;
+  position:absolute; z-index:3; left:50%; top:48%; width:min(850px,83%); height:72%;
+  transform:translate(-50%,-50%) rotateX(var(--car-tilt-x)) rotateY(var(--car-tilt-y));
+  transform-style:preserve-3d; transition:transform .22s ease-out;
+  animation:showCarFloat 5s ease-in-out infinite;
+  cursor:grab;
+}
+.showroom-car-wrap:active { cursor:grabbing; }
+.showroom-car-wrap img {
+  display:block; width:100%; height:100%; object-fit:contain; object-position:center;
+  filter:drop-shadow(0 22px 24px rgba(0,0,0,.8)) drop-shadow(0 0 22px var(--show-glow-soft));
+  user-select:none; pointer-events:none; transition:filter .5s,opacity .25s;
+}
+.car-image-glow { position:absolute; left:20%; right:20%; bottom:10%; height:22px; background:var(--show-glow); filter:blur(32px); opacity:.3; z-index:-1; }
+@keyframes showCarFloat { 0%,100% { margin-top:0; } 50% { margin-top:-9px; } }
+.showroom-floor-reflection {
+  position:absolute; z-index:2; left:24%; right:24%; bottom:10%; height:50px;
+  background:linear-gradient(180deg,var(--show-glow-soft),transparent); filter:blur(18px); transform:scaleY(-1); opacity:.65;
+}
+.showroom-stage-caption {
+  position:absolute; z-index:4; left:24px; right:24px; bottom:20px;
+  display:flex; justify-content:space-between; color:#a9a1b8; font-size:8px; letter-spacing:1.7px;
+  text-shadow:0 2px 9px #000;
+}
+.showroom-stage-caption span:first-child { color:var(--show-glow); }
+.showroom-fullscreen {
+  position:absolute; z-index:5; right:20px; top:18px; width:36px; height:36px;
+  border:1px solid rgba(255,255,255,.22); background:rgba(7,7,12,.55); color:#fff; font-size:20px;
+}
+.showroom-fullscreen:hover { border-color:var(--show-glow); color:var(--show-glow); }
+.showroom-console {
+  display:grid; grid-template-columns:1.45fr .8fr; gap:24px; padding:22px;
+  background:linear-gradient(110deg,rgba(18,16,28,.98),rgba(9,9,15,.98));
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.console-label { color:#958da5; font-size:8px; letter-spacing:1.7px; margin-bottom:13px; }
+.model-options { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:9px; }
+.model-option {
+  min-width:0; padding:5px; border:1px solid rgba(255,255,255,.12); background:#0b0a12; color:#c5bdcf;
+  transition:.25s; text-align:left;
+}
+.model-option img { display:block; width:100%; height:55px; object-fit:cover; margin-bottom:7px; }
+.model-option span { display:block; font-size:8px; letter-spacing:1px; text-align:center; padding:3px 0; }
+.model-option:hover,.model-option.active { border-color:var(--show-glow); color:#fff; box-shadow:0 0 17px var(--show-glow-soft); background:rgba(155,92,255,.09); }
+.lighting-options { display:flex; gap:7px; }
+.lighting-option,.showroom-action {
+  border:1px solid rgba(255,255,255,.14); background:transparent; color:#bcb5c8;
+  padding:10px 12px; font-size:8px; letter-spacing:1px; transition:.25s;
+}
+.lighting-option:hover,.lighting-option.active,.showroom-action:hover { color:#fff; border-color:var(--show-glow); background:var(--show-glow-soft); }
+.showroom-actions { display:flex; flex-wrap:wrap; gap:7px; margin-top:15px; }
+.showroom-disclaimer { color:#777181; font-size:9px; margin-top:14px; }
+.vehicle-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.vehicle-image { background-size:cover; background-position:center; }
+.vehicle-image-one { background-image:linear-gradient(0deg,rgba(8,8,13,.45),transparent 60%),url('assets/aether-x.jpg'); }
+.vehicle-image-two { background-image:linear-gradient(0deg,rgba(8,8,13,.45),transparent 60%),url('assets/vanta-r.jpg'); filter:none; }
+.vehicle-image-three { background-image:linear-gradient(0deg,rgba(8,8,13,.45),transparent 60%),url('assets/nova-s.jpg'); filter:none; }
+.vehicle-image-four { background-image:linear-gradient(0deg,rgba(8,8,13,.45),transparent 60%),url('assets/zenith-e.jpg'); }
+.vehicle-image-five { background-image:linear-gradient(0deg,rgba(8,8,13,.45),transparent 60%),url('assets/orion-gt.jpg'); }
+.vehicle-card { transform-style:preserve-3d; perspective:900px; }
+.vehicle-card:hover { transform:translateY(-8px) rotateX(1.5deg); box-shadow:0 22px 48px rgba(0,0,0,.32),0 0 26px rgba(155,92,255,.10); }
+.vehicle-image { transition:background-size .5s,filter .4s; }
+.vehicle-card:hover .vehicle-image { background-size:110% auto; }
+.vehicle-info,.vehicle-specs { position:relative; }
+.disclaimer { line-height:1.7; }
+
+@media(max-width:1050px) {
+  .main-nav { gap:14px; }
+  .nav-link { font-size:10px; }
+  .showroom-console { grid-template-columns:1fr; }
+}
+@media(max-width:650px) {
+  .main-nav { gap:22px; }
+  .showroom-section { padding-top:80px; padding-bottom:80px; }
+  .showroom-heading { display:block; }
+  .showroom-live { margin-top:17px; }
+  .showroom-stage { height:360px; }
+  .showroom-car-wrap { width:112%; height:66%; top:48%; }
+  .showroom-platform { width:100%; top:70%; }
+  .showroom-stage-caption { left:12px; right:12px; bottom:13px; font-size:6px; }
+  .showroom-topline { padding:13px; font-size:7px; }
+  .showroom-console { padding:14px; gap:18px; }
+  .model-options { grid-template-columns:repeat(5,minmax(80px,1fr)); overflow-x:auto; padding-bottom:5px; }
+  .model-option img { height:48px; }
+  .vehicle-grid { grid-template-columns:1fr; }
+  .vehicle-card:nth-child(n+2) { display:block; }
+  .vehicle-image { height:225px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .showroom-grid,.showroom-car-wrap { animation:none !important; }
+}
+
+
