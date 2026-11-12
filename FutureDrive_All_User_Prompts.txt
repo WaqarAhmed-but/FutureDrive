@@ -1,0 +1,116 @@
+FUTUREDRIVE PROJECT — USER PROMPTS & INSTRUCTIONS
+=================================================
+
+Note:
+This file collects the FutureDrive project prompts and instructions available in the conversation history and project context.
+Exact user wording is kept in quotation marks where it is available. Some earlier turns were not retained verbatim, so those are labelled as summaries rather than presented as exact quotes.
+
+1. COMPETITION BRIEF SHARED BY THE USER (TEXT FROM SCREENSHOTS)
+---------------------------------------------------------------
+
+General competition instruction — “What to Build”:
+“Build a frontend prototype for one audience and one primary task. Include a landing view, three useful items or steps, one primary action, one working interaction, a mobile check, and a short README. Use fictional sample data when real details are unavailable and label it. No backend, database, payments, authentication, or real user data.”
+
+Chosen topic — “5. Futuristic Car Theme Website”:
+“Inspired by BYD, Tesla, Lamborghini, Porsche, or other automotive brands.
+
+Design a premium automotive website showcasing futuristic vehicles. Include immersive hero sections, large vehicle imagery, specifications, performance statistics, color variations, and interactive vehicle showcases. Participants are encouraged to experiment with cinematic transitions, scroll animations, dark themes, and futuristic UI elements.”
+
+2. PROJECT DIRECTION AND DESIGN CHOICES
+---------------------------------------
+
+Exact user messages:
+- “Let's build the futuristic car website together step by step.”
+- “I choose theme A. Continue with Step 5 and give me the professional CSS design for FutureDrive.”
+- “oh my bad”
+- “okay its set now can you provide me the images again for hero img”
+- “my img is not showing”
+- “Create the complete futuristic car website code, ready to run.”
+
+Design direction established during the project:
+- Website name: FutureDrive.
+- Futuristic premium automotive theme.
+- Dark black background with purple/violet neon accents.
+- Cinematic hero section with a prominent futuristic car image.
+- Professional typography, navigation, vehicle showcases, specifications and performance information.
+- Keep the project frontend-only and easy to run locally.
+- The user did not want to depend on installing Live Server; the website should work by opening index.html in a browser.
+- The user selected Option A for a CSS-based 3D-inspired experience.
+
+3. 3D WEBSITE / SHOWROOM REQUESTS
+---------------------------------
+
+Exact user messages:
+- “make it a 3d website”
+- “i cant download the live server can i make it without it a 3d?”
+- “5 one and yes lets go with option A”
+- “see what is this happening?”
+- “bro it is looking messed up the car is not coming well”
+- “lets add more different cars you provided me in this and make the 3d page in this website and send me its final file after making”
+- “i think it is crashed?”
+
+Vehicle names requested for the website:
+- Aether X
+- Vanta R
+- Nova S
+- Zenith E
+- Orion GT
+
+The user wanted several different cars in the website and a dedicated 3D-style page/showcase. The user later reported that the car presentation looked wrong and asked for it to be improved.
+
+4. DIGITAL GARAGE REMOVAL
+-------------------------
+
+Exact user message:
+- “remove the digital garage section”
+
+Instruction:
+Remove the Digital Garage / 3D Showroom section from the website.
+
+5. HERO IMAGE QUALITY FIX
+-------------------------
+
+Exact user message:
+- “this img is being blurrend set it right”
+
+Instruction:
+The hero car image looked blurry when displayed in the website. Improve the image quality and make it look sharp while keeping the FutureDrive design.
+
+6. GITHUB DESCRIPTION AND UPLOAD
+--------------------------------
+
+Exact user message:
+- “provide me a little description for this project for github”
+
+Exact user message:
+- “https://github.com/WaqarAhmed-but/FutureDrive.git
+this is my repository link give me git commands on vs terminal”
+
+7. OTHER PROJECT-RELATED USER MESSAGES
+--------------------------------------
+
+Exact user messages:
+- “these are the instructions and this is what i want to build”
+- “its showing this”
+- “its not working why?”
+- “lets add more different cars you provided me in this and make the 3d page in this website and send me its final file after making”
+- “bro its looking really bad”
+- “remove the digital garage section”
+- “this img is being blurrend set it right”
+
+8. CONSOLIDATED FUTUREDRIVE PROMPT
+----------------------------------
+
+The following is a cleaned-up combined prompt based on the user's competition brief and project instructions. It is a consolidated version, not a verbatim message:
+
+“Build a premium, futuristic automotive website called FutureDrive as a frontend-only prototype for a website competition. Use a professional black and dark-purple theme with violet neon accents, cinematic automotive imagery, modern typography, smooth animations, and responsive layouts.
+
+Create a strong hero section with a large, sharp futuristic car image, a bold headline, a short description, and a clear Explore Vehicles action. Add a vehicle showcase featuring five fictional concept cars: Aether X, Vanta R, Nova S, Zenith E, and Orion GT. Include useful vehicle details, specifications, performance statistics, and attractive vehicle cards. Add technology, performance, and contact sections with clear navigation.
+
+The design should feel premium, modern, polished, and visually impressive, inspired by futuristic automotive brands such as Tesla, BYD, Lamborghini, and Porsche, without copying their branding.
+
+Keep the website frontend-only using HTML, CSS, and vanilla JavaScript. Do not require a backend, database, authentication, payments, or real user data. Make it work locally by opening index.html in a browser; do not require Live Server.
+
+A CSS-based 3D-inspired experience was explored, but the Digital Garage / 3D Showroom section was later requested to be removed. Keep the final website focused on the main automotive website and vehicle showcase. Ensure the hero image is high-resolution and sharp, not blurry. Include a short README.”
+
+END OF FILE
